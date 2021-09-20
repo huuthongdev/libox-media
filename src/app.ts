@@ -13,8 +13,8 @@ app.use(cors());
 app.use(json());
 app.use(onError);
 
-app.use('/', accessRouter)
 app.get('/ping', (_: Request, res: Response) => res.send({ message: 'Media Service' }))
+app.use('/', accessRouter)
 app.use('/upload', uploadRouter)
 
 app.use((_: Request, res: Response) => res.status(404).send({ success: false, message: ErrorMessage.INVALID_ROUTE }));
