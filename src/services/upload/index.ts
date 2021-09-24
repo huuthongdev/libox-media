@@ -37,6 +37,7 @@ const upload = multer({
             'video/mpeg',
             'application/pdf',
             'application/vnd.ms-excel',
+            'application/octet-stream',
         ]
         // @ts-ignore
         if (!mimetypesAccepted.includes(file.mimetype)) return cb(new ServerError('Định dạng file không được chấp nhận', 400), false)
